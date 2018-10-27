@@ -1,3 +1,3 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'github_hook', '--trigger-http']
+  args: ['functions', 'deploy', 'github_hook', '--runtime', 'python37', '--trigger-http']
