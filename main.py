@@ -6,7 +6,7 @@ public_forward_url = os.environ.get('PUBLIC_FORWARD_URL')
 private_forward_url = os.environ.get('PRIVATE_FORWARD_URL')
 
 
-def hello_world(request):
+def github_hook(request):
     body = request.get_json()
 
     github_headers = {
