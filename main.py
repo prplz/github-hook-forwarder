@@ -29,7 +29,7 @@ def github_hook(request):
     github_headers = {
         header: value
         for header, value in request.headers.items()
-        if header.lower().startswith('x-github')
+        if header.startswith('X-Github')
     }
 
     if private_forward_url and json_body['repository']['private'] is False:
