@@ -22,9 +22,6 @@ def github_hook(request):
     body = request.get_data()
     digest = hmac.new(webhook_secret, body, 'sha1').hexdigest()
 
-    logging.info(repr(body))  # debug
-    logging.info(digest, signature)  # debug
-
     if not hmac.compare_digest('sha1=' + digest, signature):
         return abort(403)
 
