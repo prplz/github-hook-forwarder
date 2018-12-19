@@ -32,10 +32,10 @@ def github_hook(request):
         if header.startswith('X-Github')
     }
 
-    if private_forward_url and json_body['repository']['private'] is False:
+    if public_forward_url and json_body['repository']['private'] is False:
         requests.post(public_forward_url, json=json_body, headers=github_headers)
 
-    if public_forward_url:
+    if private_forward_url:
         requests.post(private_forward_url, json=json_body, headers=github_headers)
 
     return 'OK'
